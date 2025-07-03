@@ -100,33 +100,16 @@ function fill(data) {
 }
 
 // ✅ إرسال البيانات إلى Google Sheets
-async function postToSheet(payload, action) {
-  try {
-    // استخدم URL النشر الخاص بك
-    const API_URL = 'https://script.google.com/macros/s/AKfycbxL6OBodRQ0t_Ag3xXikue2RfTOi-UxYbayEwZ9fIXeVmHgTsCWc9JHXPx0Ns5Rijf4/exec';
-    
-    // حل بديل للتحايل على CORS
-   const CORS_PROXY = 'http://localhost:8080/';
-    
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Requested-With': 'XMLHttpRequest'
-      },
-      body: JSON.stringify(payload)
-    });
-    
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    return await response.json();
-    
-  } catch (error) {
-    console.error('Error:', error);
-    return {error: error.message};
-  }
+function postToSheet(payload, action) {
+  return fetch(`${scriptURL}?action=${action}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(response => {
+    if (!response.ok) throw new Error("HTTP error! status: " + response.status);
+    return response.text();
+  });
 }
 
 // ✅ معالجات الأزرار
