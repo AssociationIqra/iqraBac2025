@@ -106,8 +106,7 @@ async function postToSheet(payload, action) {
     const API_URL = 'https://script.google.com/macros/s/AKfycbxL6OBodRQ0t_Ag3xXikue2RfTOi-UxYbayEwZ9fIXeVmHgTsCWc9JHXPx0Ns5Rijf4/exec';
     
     // حل بديل للتحايل على CORS
-    const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
-    const url = `${CORS_PROXY}${API_URL}?action=${action}`;
+   const CORS_PROXY = 'http://localhost:8080/';
     
     const response = await fetch(url, {
       method: 'POST',
