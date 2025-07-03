@@ -102,18 +102,31 @@ function fill(data) {
 // ✅ إرسال البيانات إلى Google Sheets
 async function postToSheet(payload, action) {
   try {
-    const response = await fetch(`${API_URL}?action=${action}`, {
+    // استخدم URL النشر الخاص بك
+    const API_URL = 'https://script.google.com/macros/s/AKfycbxL6OBodRQ0t_Ag3xXikue2RfTOi-UxYbayEwZ9fIXeVmHgTsCWc9JHXPx0Ns5Rijf4/exec';
+    
+    // حل بديل للتحايل على CORS
+    const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
+    const url = `${CORS_PROXY}${API_URL}?action=${action}`;
+    
+    const response = await fetch(url, {
       method: 'POST',
-      body: JSON.stringify(payload),
-      headers: { 'Content-Type': 'application/json' }
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      body: JSON.stringify(payload)
     });
     
-    if (!response.ok) throw new Error('فشل في الاتصال بالخادم');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     
     return await response.json();
+    
   } catch (error) {
     console.error('Error:', error);
-    return { error: error.message };
+    return {error: error.message};
   }
 }
 
