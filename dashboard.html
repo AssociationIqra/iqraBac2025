@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>لوحة تسجيل الطالب</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+  <h1 class="main-title">تسجيلات بكالوريا 2025</h1>
+  <h2 class="sub-title">جمعية إقرأ للثقافة و التنمية العلمية - بلدة عمر - تقرت</h2>
+</header>
+
+<!-- زر تسجيل الخروج -->
+<div style="text-align: left; padding: 10px;">
+  <button onclick="logout()" id="logoutBtn">تسجيل الخروج</button>
+</div>
+
+<div class="container">
+  <h3>قم بتعبئة المعلومات لتسجيل الطالب</h3>
+  <form id="studForm">
+    <!-- الحقول الأساسية -->
+    <input type="text" id="regNo" placeholder="رقم التسجيل">
+    <input type="text" id="lname" placeholder="اللقب">
+    <input type="text" id="fname" placeholder="الاسم">
+    <label>تاريخ الميلاد:</label>
+    <input type="date" id="dob">
+    <input type="number" id="grade" placeholder="المعدل" step="0.01">
+
+    <!-- الشعبة -->
+    <select id="stream">
+      <option value="">-- اختر الشعبة --</option>
+      <option>علوم تجريبية</option>
+      <option>رياضيات</option>
+      <option>تقني رياضي هندسة كهربائية</option>
+      <option>تقني رياضي هندسة ميكانيكية</option>
+      <option>تقني رياضي هندسة مدنية</option>
+      <option>تقني رياضي هندسة طرائق</option>
+      <option>تسيير واقتصاد</option>
+      <option>آداب وفلسفة</option>
+      <option>آداب ولغات أجنبية</option>
+    </select>
+
+    <input type="text" id="regPassStud" placeholder="الرقم السري">
+
+    <!-- مرحلة التسجيل -->
+    <label>مرحلة التسجيل الأولي:</label>
+    <select id="phase1">
+      <option value="">-- اختر إجابة --</option>
+      <option>مسجل</option>
+      <option>غير مسجل</option>
+      <option>غير معني</option>
+      <option>في الانتظار</option>
+    </select>
+
+    <label>مرحلة تأكيد التسجيل:</label>
+    <select id="phase2">
+      <option value="">-- اختر إجابة --</option>
+      <option>مؤكد</option>
+      <option>غير مؤكد</option>
+      <option>في الانتظار</option>
+      <option>غير معني</option>
+    </select>
+
+    <!-- تواريخ -->
+    <label>تاريخ التسجيل البيداغوجي:</label>
+    <input type="date" id="pedDate">
+
+    <label>تاريخ تسجيل الخدمات الجامعية:</label>
+    <input type="date" id="socDate">
+
+    <!-- الرغبة -->
+    <label>الرغبة:</label>
+    <select id="wish">
+      <option value="">-- اختر الرغبة --</option>
+      <option>الاختيار 1</option>
+      <option>الاختيار 2</option>
+      <option>الاختيار 3</option>
+      <option>الاختيار 4</option>
+      <option>الاختيار 5</option>
+      <option>الاختيار 6</option>
+      <option>الاختيار 7</option>
+      <option>الاختيار 8</option>
+      <option>الاختيار 9</option>
+      <option>الاختيار 10</option>
+      <option>الاختيار 0</option>
+    </select>
+
+    <input type="text" id="major" placeholder="التخصص">
+
+    <!-- الولاية -->
+    <label>الولاية:</label>
+    <select id="state">
+      <option value="">-- اختر الولاية --</option>
+      <option>أدرار</option>
+<option>الشلف</option>
+<option>الأغواط</option>
+<option>أم البواقي</option>
+<option>باتنة</option>
+<option>بجاية</option>
+<option>بسكرة</option>
+<option>بشار</option>
+<option>البليدة</option>
+<option>البويرة</option>
+<option>تمنراست</option>
+<option>تبسة</option>
+<option>تلمسان</option>
+<option>تيارت</option>
+<option>تيزي وزو</option>
+<option>الجزائر</option>
+<option>الجلفة</option>
+<option>جيجل</option>
+<option>سطيف</option>
+<option>سعيدة</option>
+<option>سكيكدة</option>
+<option>سيدي بلعباس</option>
+<option>عنابة</option>
+<option>قالمة</option>
+<option>قسنطينة</option>
+<option>المدية</option>
+<option>مستغانم</option>
+<option>المسيلة</option>
+<option>معسكر</option>
+<option>ورقلة</option>
+<option>وهران</option>
+<option>البيض</option>
+<option>إليزي</option>
+<option>برج بوعريريج</option>
+<option>بومرداس</option>
+<option>الطارف</option>
+<option>تندوف</option>
+<option>تيسمسيلت</option>
+<option>الوادي</option>
+<option>خنشلة</option>
+<option>سوق أهراس</option>
+<option>تيبازة</option>
+<option>ميلة</option>
+<option>عين الدفلى</option>
+<option>النعامة</option>
+<option>عين تموشنت</option>
+<option>غرداية</option>
+<option>غليزان</option>
+<option>تمتراس</option>
+<option>أولاد جلال</option>
+<option>بني عباس</option>
+<option>عين صالح</option>
+<option>عين قزام</option>
+<option>تقرت</option>
+<option>جانت</option>
+<option>المغير</option>
+<option>المنيعة</option>
+    </select>
+
+    <!-- حالة الدفع -->
+    <label>حالة الدفع:</label>
+    <select id="payNotes">
+      <option value="">-- اختر إجابة --</option>
+      <option>خالص</option>
+      <option>غير خالص</option>
+      <option>في الانتظار</option>
+      <option>غير معني</option>
+    </select>
+
+    <!-- الأزرار -->
+    <div class="btn-group">
+      <button type="button" id="addStud" class="green">إضافة طالب</button>
+      <button type="button" id="delStud" class="red">حذف طالب</button>
+      <button type="button" id="clearForm" class="blue">مسح البيانات</button>
+      <button type="button" id="getStud" class="yellow">جلب البيانات</button>
+      <button type="button" id="editStud" style="background:#FF9800;color:#fff">تعديل</button>
+    </div>
+
+    <a href="https://docs.google.com/spreadsheets/d/ABC123456789/export?format=xlsx" target="_blank">
+      <button type="button" style="background:#6C63FF;color:white">تحميل Excel</button>
+    </a>
+
+    <p id="statusMsg"></p>
+  </form>
+</div>
+
+<!-- تسجيل الخروج -->
+<script>
+  function logout() {
+    localStorage.removeItem("loggedIn");
+    window.location.href = "index.html";
+  }
+</script>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

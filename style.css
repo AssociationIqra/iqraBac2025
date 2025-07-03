@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap');
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+}
+
+.main-header {
+  text-align: center;
+  background: linear-gradient(90deg, #5161b8, #bfcde9);
+  color: white;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.main-title {
+  font-size: 2.4em;
+  margin: 0;
+}
+
+.sub-title {
+  font-size: 1.2em;
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 800px;
+  background: white;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+h2, h3 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+h2 {
+  color: #3f51b5;
+}
+
+h3 {
+  color: #f44336;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #3f51b5;
+  box-shadow: 0 0 8px rgba(63, 81, 181, 0.3);
+  outline: none;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 18px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 1;
+  transition: 0.3s;
+  min-width: 100px;
+}
+
+.green { background-color: #4caf50; color: white; }
+.green:hover { background-color: #43a047; }
+
+.red { background-color: #f44336; color: white; }
+.red:hover { background-color: #e53935; }
+
+.blue { background-color: #2196f3; color: white; }
+.blue:hover { background-color: #1e88e5; }
+
+.yellow { background-color: #ffc107; color: black; }
+.yellow:hover { background-color: #ffb300; }
+
+button#logoutBtn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #333;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  transition: 0.3s;
+}
+button#logoutBtn:hover {
+  background-color: #111;
+}
+
+#statusMsg {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #555;
+  font-size: 1em;
+}
+
+@media (max-width: 600px) {
+  .btn-group {
+    flex-direction: column;
+  }
+  
+  button {
+    width: 100%;
+  }
+
+  .container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .main-title {
+    font-size: 1.6em;
+  }
+
+  .sub-title {
+    font-size: 1em;
+  }
+}
